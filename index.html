@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HexaTP | Premium Transfer Pricing Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #050a14;
+            --accent: #f5c400;
+            --accent-glow: rgba(245, 196, 0, 0.3);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+              --text-slate: #94a3b8; 
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- SLEEK NAV --- */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            z-index: 1000;
+            background: rgba(11, 29, 53, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-weight: 800; font-size: 20px; text-transform: uppercase; }
+        .logo span { color: var(--accent); }
+
+        nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: #ccc; font-size: 14px; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--accent); }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            padding: 180px 5% 100px;
+            text-align: center;
+            background: radial-gradient(circle at top center, #102444 0%, var(--bg-dark) 70%);
+        }
+
+        .hero-tag {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 6px 18px;
+            border-radius: 100px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .hero-section h1 {
+            font-size: clamp(40px, 8vw, 75px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #aab7cc;
+            font-size: 18px;
+        }
+
+        .btn-main {
+            background: var(--accent);
+            color: #000;
+            padding: 16px 35px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 20px var(--accent-glow);
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-main:hover { transform: translateY(-3px); background: #fff; }
+
+        /* HEXA SECTION STYLES */
+.hexa-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hexa-card {
+    background: rgba(255, 255, 255, 0.03); /* Subtle glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px 15px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hexa-card:hover {
+    transform: translateY(-10px);
+    border-color: #f5c400; /* Glows yellow on hover */
+    background: rgba(245, 196, 0, 0.05);
+}
+
+.hexa-card .letter {
+    font-size: 48px;
+    font-weight: 800;
+    color: #f5c400; /* Matching your theme yellow */
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.hexa-card .label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .hexa-card .letter {
+        font-size: 36px;
+    }
+    .hexa-card .label {
+        font-size: 12px;
+    }
+}
+        /* --- STATS STRIP --- */
+        .stats-strip {
+            background: var(--accent);
+            padding: 30px 0;
+            color: #000;
+        }
+
+        .stat-item h2 { font-weight: 800; font-size: 40px; margin: 0; }
+        .stat-item p { font-weight: 600; font-size: 12px; text-transform: uppercase; opacity: 0.8; }
+
+/*map*/
+/* GLOBAL MAP SECTION STYLES */
+.global-map-section {
+    background-color:  var(--bg-dark) 100%; /* Exact Blue from Image 3 */
+    padding: 100px 0;
+    color: #ffffff;
+}
+
+.map-title {
+    font-size: 36px;
+    font-weight: 800; /* Extra bold as seen in Image 3 */
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.map-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.map-wrapper img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));
+}
+
+@media (max-width: 768px) {
+    .map-title {
+        font-size: 24px;
+    }
+    .global-map-section {
+        padding: 60px 20px;
+    }
+}
+
+/*we are*/
+/* Custom styling for hexagonal icon container */
+.who-we-are{
+    background:var(--bg-dark) 100%;
+     color: #ffffff;
+}
+.who-we-are p{
+    color: #aab7cc;
+}
+.icon-hex {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #b49a78; /* Brand Gold/Tan color from your logo/image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); /* This property creates the 6-sided shape */
+    color: #b49a78;
+    font-size: 24px;
+}
+
+/* Custom button styling */
+.btn-main {
+            background: var(--accent);
+            color: #000;
+            padding: 16px 35px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 20px var(--accent-glow);
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-main:hover { transform: translateY(-3px); background: #fff; }
+
+         /* Hexagonal Icon Style */
+    .icon-hex {
+        width: 50px;
+        height: 50px;
+        border: 2px solid var(--accent); /* Consistent brand gold */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Geometric clip-path */
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        color: var(--accent);
+        font-size: 20px;
+    }
+
+        /* --- BENTO GRID SECTION --- */
+        .bento-section { padding: 80px 8%; }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 280px;
+            gap: 20px;
+        }
+
+        .bento-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 30px;
+            transition: 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .bento-card.tall { grid-row: span 2; }
+        .bento-card.wide { grid-column: span 2; }
+
+        .bento-card i { font-size: 32px; color: var(--accent); margin-bottom: 20px; display: block; }
+        .bento-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 15px; }
+        .bento-card p { color: #8a99af; font-size: 14px; line-height: 1.6; }
+/*tech*/
+/* Container Background to match expert-khaki.vercel.app */
+.tech-expertise-section {
+    background-color: #020617; 
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Feature Titles and Lists */
+.small-text {
+    color: #94a3b8; /* Slate color for secondary text */
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.icon-amber {
+    font-size: 1.5rem;
+    color: #f59e0b; /* Brand Amber from live site */
+}
+
+/* Request Demo Button */
+.demo-btn {
+    background-color:var(--accent);
+    color: #020617;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.demo-btn:hover {
+    background-color:var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);
+}
+
+/* Graphic Highlight */
+.brain-circuit-graphic img {
+    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.15));
+}
+        .contact-footer {
+            padding: 100px 5%;
+            text-align: center;
+            background: linear-gradient(0deg, #102444 0%, var(--bg-dark) 100%);
+        }
+
+        @media (max-width: 992px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .bento-grid { grid-template-columns: 1fr; }
+        }
+/*dropdown*/
+       .dropdown-submenu{
+     background:  #f5c400;  
+     color: #000; 
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: none;
+  margin-top: -1px;
+  background:  #f5c400;  
+     color: #000; 
+}
+
+.dropdown-submenu:hover > .dropdown-menu{
+  display: block;
+}
+
+.dropdown-menu{
+  z-index: 9999;
+}
+ .cta {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-darker), var(--bg-dark));
+        }
+
+        .contact-footer {
+            padding: 100px 5%;
+            text-align: center;
+            background: linear-gradient(0deg, #102444 0%, var(--bg-dark) 100%);
+        }
+        .btn-accent{
+    background: var(--accent);
+    color:#000;
+    padding:14px 30px;
+    border-radius:50px;
+    font-weight:600;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.btn-accent:hover{
+    background:#fff;
+    color:#000;
+}
+       
+ footer { padding: 20px; text-align: center; color: var(--text-slate); font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">HEXA<span style="color:var(--accent)">TP</span></div>
+        <nav class="d-none d-md-block">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="solution.html">Solutions</a></li>
+              <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+    Countries
+  </a>
+
+  <ul class="dropdown-menu">
+
+    <!-- Gulf Region -->
+    <li class="dropdown-submenu position-relative">
+      <a class="dropdown-item dropdown-toggle" href="#">Gulf Region</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="unitedarab.html">UAE</a></li>
+        <li><a class="dropdown-item" href="Saudiarabia.html">Saudi Arabia</a></li>
+        <li><a class="dropdown-item" href="Qatar.html">Qatar</a></li>
+        <li><a class="dropdown-item" href="oman.html">Oman</a></li>
+        <li><a class="dropdown-item" href="bahrain.html">Bahrain</a></li>
+        <li><a class="dropdown-item" href="egypt.html">Egypt</a></li>
+      </ul>
+    </li>
+
+    <!-- Asia -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Asia</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="India.html">India</a></li>
+        <li><a class="dropdown-item" href="bangladesh.html">Bangladesh</a></li>
+      </ul>
+    </li>
+
+    <!-- South East Asia -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">South East Asia</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="singapore.html">Singapore</a></li>
+        <li><a class="dropdown-item" href="thailand.html">Thailand</a></li>
+        <li><a class="dropdown-item" href="malaysia.html">Malaysia</a></li>
+        <li><a class="dropdown-item" href="australia.html">Australia</a></li>
+        <li><a class="dropdown-item" href="indonesia.html">Indonesia</a></li>
+        <li><a class="dropdown-item" href="viethnam.html">Vietnam</a></li>
+      </ul>
+    </li>
+
+    <!-- Africa -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Africa</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="botswana.html">Botswana</a></li>
+        <li><a class="dropdown-item" href="ghana.html">Ghana</a></li>
+        <li><a class="dropdown-item" href="kenya.html">Kenya</a></li>
+      </ul>
+    </li>
+
+    <!-- America -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">America</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="canada.html">Canada</a></li>
+        <li><a class="dropdown-item" href="us.html">United States</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+        </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="mailto:md@hexatp.com" class="btn-main py-2 px-4 fs-6">Get Started</a>
+    </header>
+
+    <section class="hero-section">
+       
+        <div class="hero-tag">Powered by Technology, Driven by Expertise</div>
+        <h1>Mastering Global <br><span style="color:var(--accent)">Transfer Pricing</span></h1>
+        <p>Empowering businesses with well-researched information and knowledge engineering to create long-term corporate value.</p>
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <a href="mailto:md@hexatp.com" class="btn-main">Partner With Our TP Experts</a>
+             <a href="#" class="btn-main" style="background:transparent; color:#fff; border:1px solid var(--glass-border);">View Solutions</a>
+        </div>
+
+       <div class="container mt-5">
+    <div class="row g-4 hexa-container">
+        <div class="col-6 col-md-3">
+            <div class="hexa-card">
+                <div class="letter">H</div>
+                <div class="label">Human Expertise</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="hexa-card">
+                <div class="letter">E</div>
+                <div class="label">Economic & Legal Insight</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="hexa-card">
+                <div class="letter">X</div>
+                <div class="label">Cross-Border Intelligence</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="hexa-card">
+                <div class="letter">A</div>
+                <div class="label">Authority Ready Solutions</div>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+
+<div class="stats-strip">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 stat-item"><h2>100+</h2><p>Years Experience</p></div>
+                <div class="col-md-3 stat-item"><h2>500+</h2><p>Global Clients</p></div>
+                <div class="col-md-3 stat-item"><h2>OECD</h2><p>BEPS Compliant</p></div>
+                <div class="col-md-3 stat-item"><h2>50+</h2><p>Jurisdictions</p></div>
+            </div>
+        </div>
+    </div>
+
+<section class="global-map-section">
+    <div class="container text-center">
+        <div class="map-content">
+            <h2 class="map-title">YOUR TRUSTED TP PARTNER<br><span style="color:var(--accent)">ACROSS THE GLOBE</span></h2>
+            <div class="map-wrapper">
+                <img src="world-map.png" alt="HexaTP Global Coverage Map" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="who-we-are py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <p class="text-uppercase fw-bold small mb-2" style="color: white;">Who We Are</p>
+                <h2 class="display-5 fw-bold mb-4">WE ARE A PIONEER <span style="color:var(--accent)">TRANSFER PRICING SOLUTION PROVIDER</span></h2>
+                <p class="mb-5 text" style="line-height: 1.8;">Our vision is to empower the businesses and professionals with well-researched information and knowledge. We strongly believe that the things we do diligently every day goes a long way in creating long-term value for corporates.</p>
+                
+                <div class="row g-4 mb-5">
+                   <div class="col-6 d-flex align-items-center">
+                        <div class="icon-hex me-3">
+                        <i class="bi bi-lightbulb text-warning"></i>
+                        </div>
+                            <h6 class="fw-bold m-0" style="color:#ffffff;">Innovation and Excellence</h6>
+                        </div>
+                    <div class="col-6 d-flex align-items-center">
+    <div class="icon-hex me-3">
+        <i class="bi bi-people text-warning"></i>
+    </div>
+    <h6 class="fw-bold m-0" style="color:#ffffff;">Client Centric</h6>
+</div>
+
+<div class="col-6 d-flex align-items-center">
+    <div class="icon-hex me-3">
+        <i class="bi bi-patch-check text-warning"></i>
+    </div>
+    <h6 class="fw-bold m-0" style="color:#ffffff;">Quality</h6>
+</div>
+
+<div class="col-6 d-flex align-items-center">
+    <div class="icon-hex me-3">
+        <i class="bi bi-speedometer2 text-warning"></i>
+    </div>
+    <h6 class="fw-bold m-0" style="color:#ffffff;">Efficiency</h6>
+</div>
+</div>
+                
+                 <a href="" class="btn-main py-2 px-4 fs-6">Step Inside</a>
+            </div>
+            
+            <div class="col-lg-6">
+                <img src="https://hexatp.com/wp-content/uploads/2025/10/vertical-cityscape-with-tall-skyscrapers-new-york-usa-1024x1024.webp" alt="Cityscape" class="img-fluid rounded shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+     <section class="bento-section">
+        <div class="text-center mb-5">
+            <p class="text-uppercase fw-bold small mb-2" style="color: white;">What We Can Do</p>
+            <h2 class="display-5 fw-bold">Improve Your<span style="color:var(--accent)"> Experience With Us</span></h2>
+            
+        </div>
+
+        <div class="bento-grid">
+            <div class="bento-card wide">
+                <i class="bi bi-diagram-3"></i>
+                <h3>Transfer Pricing Documentation Solutions</h3>
+                <p>Transfer Pricing compliance requirements by delivering meticulously prepared Documentation as per Local TP Regulations and global standards.</p>
+            </div>
+
+            <div class="bento-card tall" style="background: linear-gradient(to bottom, rgba(245, 196, 0, 0.1), transparent);">
+                <i class="bi bi-shield-check"></i>
+                <h3>Risk Mitigation</h3>
+                <p>We perform deep-dive health checks to identify intercompany transaction risks before tax authorities do.</p>
+                <ul class="mt-4 list-unstyled text-secondary small">
+                    <li><i class="bi bi-check2 text-warning me-2"></i> Gap Analysis</li>
+                    <li><i class="bi bi-check2 text-warning me-2"></i> Audit Defense</li>
+                    <li><i class="bi bi-check2 text-warning me-2"></i> Policy Tuning</li>
+                </ul>
+            </div>
+
+            <div class="bento-card">
+                <i class="bi bi-bank"></i>
+                <h3>Proprietary Database</h3>
+                <p>Enriched with our proprietary database “Hexanomy” which encompasses financial data of 100,000 plus companies.
+
+We also have access to various public financial databases, industry and trade directories which assist us to render comprehensive TP analysis</p>
+            </div>
+
+            <div class="bento-card">
+                <i class="bi bi-globe-americas"></i>
+                <h3>Advisory & Litigation Support Solutions</h3>
+                <p>We help design and implement Global TP Policy / Review Agreements for Multinational Corporations. We also provide TP litigation support services.</p>
+            </div>
+
+            <div class="bento-card wide">
+                <i class="bi bi-briefcase"></i>
+                <h3>TP Due Diligence / Health Check Services</h3>
+                <p>We assist in identifying gaps by providing health check up from Legal, Corporate and TP documentation perspective.</p>
+            </div>
+        </div>     
+    </section>
+
+    <section class="tech-expertise-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h2 class="display-5 fw-bold text-white mb-3">Powered by <span style="color:var(--accent);">Technology</span>, Driven by Expertise</h2>
+                <p class="lead mb-5" style="color: #94a3b8;">Our proprietary Knowledge Engineering platform combines artificial intelligence, advanced analytics, and decades of TP expertise to deliver insights that matter.</p>
+                
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="feature-item mb-4">
+                            <div class="icon-amber mb-2"><i class="bi bi-search text-warning"></i></div>
+                            <h5 class="text-white fw-bold">Intelligent Data Analysis</h5>
+                            <ul class="list-unstyled small-text">
+                                <li>• Automated comparability analysis</li>
+                                <li>• Real-time benchmarking updates</li>
+                            </ul>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon-amber mb-2"> <i class="bi bi-bar-chart-line text-warning"></i></div>
+                            <h5 class="text-white fw-bold">Comprehensive Databases</h5>
+                            <ul class="list-unstyled small-text">
+                                <li>• Access to 500,000+ comparables</li>
+                                <li>• Financial data from 50+ countries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-item mb-4">
+                            <div class="icon-amber mb-2"> <i class="bi bi-clock-history text-warning"></i></div>
+                            <h5 class="text-white fw-bold">Efficiency & Accuracy</h5>
+                            <ul class="list-unstyled small-text">
+                                <li>• 50% faster documentation preparation</li>
+                                <li>• 99.9% data accuracy</li>
+                            </ul>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon-amber mb-2"><i class="bi bi-shield-lock text-warning"></i></div>
+                            <h5 class="text-white fw-bold">Security & Compliance</h5>
+                            <ul class="list-unstyled small-text">
+                                <li>• Bank-grade encryption</li>
+                                <li>• GDPR compliant</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <button class="demo-btn mt-5">REQUEST PLATFORM DEMO</button>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="brain-circuit-graphic">
+                    <img src="https://hexatp.com/wp-content/uploads/2022/05/Tech-Face-1024x1024.png" class="img-fluid opacity-75" alt="Knowledge Engineering">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+   <section class="cta" id="consult">
+        <div class="container">
+            <h2>Contact With Our Experts</h2>
+            <p style="color:var(--text-slate)">
+             Secure your all operations with HexaTP.
+            </p>
+            <a href="contact.html" class="btn btn-accent mt-3">Contact Experts</a>
+        </div>
+    </section>
+
+    <section class="contact-footer">
+        <span class="text-warning text-uppercase fw-bold letter-spacing-2">Secure Your Future</span>
+        <h2 class="mt-3">Ready for a Professional Consultation?</h2>
+        <a href="mailto:md@hexatp.com" class="btn-main px-5 py-3 fs-5 mt-4">md@hexatp.com</a>
+        <p class="mt-4 text-secondary">Contact our Managing Director for a confidential consultation on your Transfer Pricing needs.</p>
+    </section>
+ <footer>
+        © 2026 HexaTP – Transfer Pricing Intelligence Platform
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

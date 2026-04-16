@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About HexaTP – aboutus</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+         :root {
+            --bg-dark: #050a14;
+            --accent: #f5c400;
+            --accent-glow: rgba(245, 196, 0, 0.3);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+               --text-slate: #94a3b8; 
+       
+        }
+          
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+ /* --- SLEEK NAV --- */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            z-index: 1000;
+            background: rgba(11, 29, 53, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-weight: 800; font-size: 20px; text-transform: uppercase; }
+        .logo span { color: var(--accent); }
+
+        nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: #ccc; font-size: 14px; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--accent); }
+
+         .btn-main {
+            background: var(--accent);
+            color: #000;
+            padding: 16px 35px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 20px var(--accent-glow);
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-main:hover { transform: translateY(-3px); background: #fff; }
+        /* --- Combined Hero & Story Section --- */
+        .hero-story-wrapper {
+            position: relative;
+            padding: 140px 0 100px;
+            /* Background image: Using a professional architectural/data center dark image */
+            background: linear-gradient(to bottom, rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.7)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.03);
+            color:  #f5c400;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .hero-story-wrapper h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    background: var(--bg-deep);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 40px;
+}
+
+        /* --- Glass Cards --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            padding: 40px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .glass-card:hover {
+            border-color:  #f5c400;
+            background: rgba(245, 158, 11, 0.05);
+            transform: translateY(-8px);
+            box-shadow:0 10px 20px var(--accent-glow);
+        }
+
+        .accent-text { color:  #f5c400; }
+        .slate-text { color: var(--text-slate); }
+
+        .icon-hex {
+            width: 56px;
+            height: 56px;
+            background:rgba(245, 158, 11, 0.05);
+            border: 1px solid  #f5c400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            color: var #f5c400;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+/*why*/
+.why-hexatp-section{
+background:var(--bg-deep);
+padding:80px 0;
+color:white;
+}
+
+.why-content h2{
+font-weight:700;
+margin-bottom:20px;
+}
+
+.why-content p{
+color:#aab4c4;
+font-size:16px;
+line-height:1.8;
+max-width:500px;
+}
+
+.icon-box{
+width:60px;
+height:60px;
+background:#0f1f3a;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:12px;
+margin-bottom:20px;
+font-size:26px;
+color:#ffb400;
+}
+
+.why-image img{
+width:100%;
+border-radius:12px;
+object-fit:cover;
+}
+       /* Section Title */
+.core h2{
+    text-align: center;
+}
+.section-title{
+text-align:center;
+font-size:40px;
+font-weight:700;
+margin-bottom:60px;
+}
+
+.section-title span{
+color:#ffc107;
+}
+
+/* Cards */
+
+.value-card{
+background:linear-gradient(145deg,#07152a,#030c1a);
+border-radius:20px;
+padding:40px 25px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.08);
+transition:0.4s;
+height:100%;
+}
+
+.value-card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 40px rgba(255,193,7,0.15);
+}
+
+/* Icon */
+
+.value-icon{
+width:70px;
+height:70px;
+margin:auto;
+margin-bottom:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+color:#ffc107;
+background:rgba(255,193,7,0.08);
+border-radius:12px;
+}
+
+.value-card h4{
+font-weight:600;
+margin-bottom:10px;
+}
+
+.value-card p{
+color:#9aa6b2;
+font-size:14px;
+}
+
+/* Stats Section */
+
+.stats-strip {
+            background: var(--accent);
+            padding: 30px 0;
+            color: #000;
+        }
+
+        .stat-item h2 { font-weight: 800; font-size: 40px; margin: 0; }
+        .stat-item p { font-weight: 600; font-size: 12px; text-transform: uppercase; opacity: 0.8; }
+
+
+/* Slider */
+
+.slider{
+overflow:hidden;
+position:relative;
+}
+
+.card-track{
+display:flex;
+gap:25px;
+width:max-content;
+animation:scroll 20s linear infinite;
+}
+
+/* Card */
+
+.team-card{
+min-width:280px;
+background:linear-gradient(145deg,#07152a,#030c1a);
+border-radius:20px;
+padding:35px 20px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.08);
+transition:0.4s;
+}
+
+.team-card:hover{
+border:1px solid #ffc107;
+transform:translateY(-6px);
+}
+
+/* Avatar */
+
+.avatar{
+width:80px;
+height:80px;
+background:#162233;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+margin-bottom:15px;
+font-size:28px;
+color:#ffc107;
+}
+
+.text-yellow{
+color:#ffc107;
+}
+
+/* Animation */
+
+@keyframes scroll {
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+
+}
+.team-card {
+    text-align: center;
+    padding: 20px;
+    min-width:240px;
+}
+
+.image-wrapper {
+    width: 150px; /* Adjust size as needed */
+    height: 150px;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    border-radius: 50%; /* Makes the image circular */
+    border: 3px solid #ffc107; /* Matches your text-yellow theme */
+}
+
+.team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the face stays centered without stretching */
+}
+.contact-footer {
+            padding: 100px 5%;
+            text-align: center;
+            background: linear-gradient(0deg, #102444 0%, var(--bg-dark) 100%);
+        }
+
+        @media (max-width: 992px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .bento-grid { grid-template-columns: 1fr; }
+        } 
+        footer { padding: 20px; text-align: center; color: var(--text-slate); font-size: 14px; }
+
+        /*dropdown*/
+       .dropdown-submenu{
+     background:  #f5c400;  
+     color: #000; 
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: none;
+  margin-top: -1px;
+  background:  #f5c400;  
+     color: #000; 
+}
+
+.dropdown-submenu:hover > .dropdown-menu{
+  display: block;
+}
+
+.dropdown-menu{
+  z-index: 9999;
+}
+    </style>
+</head>
+<body>
+  <header>
+        <div class="logo">HEXA<span>TP</span></div>
+        <nav class="d-none d-md-block">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="solution.html">Solutions</a></li>
+                <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+    Countries
+  </a>
+
+  <ul class="dropdown-menu">
+
+    <!-- Gulf Region -->
+    <li class="dropdown-submenu position-relative">
+      <a class="dropdown-item dropdown-toggle" href="#">Gulf Region</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="unitedarab.html">UAE</a></li>
+        <li><a class="dropdown-item" href="Saudiarabia.html">Saudi Arabia</a></li>
+        <li><a class="dropdown-item" href="Qatar.html">Qatar</a></li>
+        <li><a class="dropdown-item" href="oman.html">Oman</a></li>
+        <li><a class="dropdown-item" href="bahrain.html">Bahrain</a></li>
+        <li><a class="dropdown-item" href="egypt.html">Egypt</a></li>
+      </ul>
+    </li>
+
+    <!-- Asia -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Asia</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="India.html">India</a></li>
+        <li><a class="dropdown-item" href="bangladesh.html">Bangladesh</a></li>
+      </ul>
+    </li>
+
+    <!-- South East Asia -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">South East Asia</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="singapore.html">Singapore</a></li>
+        <li><a class="dropdown-item" href="thailand.html">Thailand</a></li>
+        <li><a class="dropdown-item" href="malaysia.html">Malaysia</a></li>
+        <li><a class="dropdown-item" href="australia.html">Australia</a></li>
+        <li><a class="dropdown-item" href="indonesia.html">Indonesia</a></li>
+        <li><a class="dropdown-item" href="viethnam.html">Vietnam</a></li>
+      </ul>
+    </li>
+
+    <!-- Africa -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">Africa</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="botswana.html">Botswana</a></li>
+        <li><a class="dropdown-item" href="ghana.html">Ghana</a></li>
+        <li><a class="dropdown-item" href="kenya.html">Kenya</a></li>
+      </ul>
+    </li>
+
+    <!-- America -->
+    <li class="dropdown-submenu">
+      <a class="dropdown-item dropdown-toggle" href="#">America</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="canada.html">Canada</a></li>
+        <li><a class="dropdown-item" href="us.html">United States</a></li>
+      </ul>
+    </li>
+
+  </ul>
+</li>
+        </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="mailto:md@hexatp.com" class="btn-main py-2 px-4 fs-6">Get Started</a>
+    </header>
+
+    <section class="hero-story-wrapper">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="hero-badge">Intelligence Platform</div>
+                <h1>About HexaTP</h1>
+            </div>
+
+            <div class="row g-5 align-items-stretch">
+                <div class="col-lg-7">
+                    <div class="glass-card">
+                        <h2 class="section-title mb-4">Our <span>Story</span></h2>
+                        <p class="slate-text mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                            HexaTP was founded by six professionals from finance, economics, legal, science, and technology domains who spent significant parts of their careers in transfer pricing and international taxation.
+                        </p>
+                        <p class="slate-text mb-0" style="font-size: 1.1rem; line-height: 1.8;">
+                            With over <span class="text-white fw-bold">100 years of combined experience</span> across industries, our experts provide comprehensive knowledge covering legislation, implementation, and litigation support.
+                        </p>
+                    </div>
+                </div>
+                </div>
+                </div>
+                </section>
+                
+
+<section class="why-hexatp-section">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6">
+                <div class="why-content">
+
+                    <div class="icon-box">
+                        <i class="bi bi-cpu"></i>
+                    </div>
+
+                    <h2>Why We Built <span style="color:var(--accent)">HexaTP</span></h2>
+
+                    <p>
+                        Businesses depend on reliable data to make critical financial decisions.
+                        Our platform combines domain expertise with advanced data analytics
+                        to deliver accurate benchmarking and compliance solutions.
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="col-lg-6">
+                <div class="why-image">
+                    <img src="https://hexatp.com/wp-content/uploads/2021/09/Desktop-234-1.png" alt="HexaTP">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+    <section class="py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="glass-card" style="border-left: 4px solid var(--accent-amber);">
+                        <h4 class="accent-text mb-3">Our Mission</h4>
+                        <p class="slate-text m-0">To provide a Transfer Pricing Knowledge Intelligence platform that supports professionals, corporates, and regulatory authorities with accurate and reliable information.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="glass-card" style="border-left: 4px solid var(--accent-amber);">
+                        <h4 class="accent-text mb-3">Our Vision</h4>
+                        <p class="slate-text m-0">To empower businesses and professionals with well-researched knowledge that helps them create long-term value and informed business decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="core">
+<div class="container py-5">
+<h2>Core <span style="color:var(--accent)">Values</span></h2><br>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+<div class="value-card">
+<div class="value-icon"> <i class="bi bi-lightbulb text-warning"></i></div>
+<h4>Innovation</h4>
+<p>Challenge conventional ideas and drive innovation.</p>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="value-card">
+<div class="value-icon"><i class="bi bi-people text-warning"></i></div>
+<h4>Client Centric</h4>
+<p>Support smarter decision making for businesses.</p>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="value-card">
+<div class="value-icon"><i class="bi bi-speedometer2 text-warning"></i></div>
+<h4>Efficiency</h4>
+<p>Growth with timely strategic insights.</p>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="value-card">
+<div class="value-icon"> <i class="bi bi-patch-check text-warning"></i></div>
+<h4>Quality</h4>
+<p>High quality services at competitive pricing.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Stats Section -->
+
+<div class="stats-strip">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 stat-item"><h2>100+</h2><p>Years Experience</p></div>
+                <div class="col-md-3 stat-item"><h2>500+</h2><p>Global Clients</p></div>
+                <div class="col-md-3 stat-item"><h2>OECD</h2><p>BEPS Compliant</p></div>
+                <div class="col-md-3 stat-item"><h2>50+</h2><p>Jurisdictions</p></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-5 mb-5">
+        <div class="container">
+
+<div class="slider">
+
+<div class="card-track">
+
+<!-- Cards -->
+
+<div class="team-card">
+    <div class="image-wrapper">
+        <img src="gyan.jpg" alt="Gyan Prakash Srivastava" class="team-img">
+    </div>
+    <h5>Gyan Prakash Srivastava</h5>
+   
+    <p class="text-yellow">Transfer Pricing Specialist</p>
+    </div>
+
+<div class="team-card">
+    <div class="image-wrapper">
+        <img src="manoomet.png" alt="Manoneet Dalal" class="team-img">
+    </div>
+    <h5>Manoneet Dalal</h5>
+    
+    <p class="text-yellow">Transfer Pricing Specialist</p>
+    </div>
+
+<div class="team-card">
+    <div class="image-wrapper">
+        <img src="hitansu.png" alt="Himanshu Gautam" class="team-img">
+    </div>
+    <h5>Himanshu Gautam</h5>
+  
+    <p class="text-yellow">Transfer Pricing Specialist</p>
+    </div>
+
+<div class="team-card">
+    <div class="image-wrapper">
+        <img src="priyanka.png" alt="Priyanka Sondhi" class="team-img">
+    </div>
+    <h5>Priyanka Sondhi</h5>
+    
+    <p class="text-yellow">Transfer Pricing Specialist</p>
+    </div>
+
+<div class="team-card">
+    <div class="image-wrapper">
+        <img src="yishu.png" alt="Yishu Goel" class="team-img">
+    </div>
+    <h5>Yishu Goel</h5>
+   
+    <p class="text-yellow">Litigation Expert</p>
+    </div>
+
+<div class="team-card">
+    <div class="image-wrapper">
+        <img src="nitin.png" alt="Nitin Goyal" class="team-img">
+    </div>
+    <h5>Nitin Goyal</h5>
+    
+    <p class="text-yellow">Corporate Tax Specialist</p>
+    </div>
+<!-- Duplicate cards for smooth infinite scroll -->
+
+<div class="team-card">
+    <div class="image-wrapper">
+        <img src="gyan.jpg" alt="Gyan Prakash Srivastava" class="team-img">
+    </div>
+    <h5>Gyan Prakash Srivastava</h5>
+   
+    <p class="text-yellow">Transfer Pricing Specialist</p>
+    </div>
+
+<div class="team-card">
+    <div class="image-wrapper">
+        <img src="manoomet.png" alt="Manoneet Dalal" class="team-img">
+    </div>
+    <h5>Manoneet Dalal</h5>
+   
+    <p class="text-yellow">Transfer Pricing Specialist</p>
+    </div>
+
+<div class="team-card">
+    <div class="image-wrapper">
+        <img src="hitansu.png" alt="Himanshu Gautam" class="team-img">
+    </div>
+    <h5>Himanshu Gautam</h5>
+   
+    <p class="text-yellow">Transfer Pricing Specialist</p>
+    </div>
+
+<div class="team-card">
+    <div class="image-wrapper">
+        <img src="priyanka.png" alt="Priyanka Sondhi" class="team-img">
+    </div>
+    <h5>Priyanka Sondhi</h5>
+    
+    <p class="text-yellow">Transfer Pricing Specialist</p>
+    </div>
+
+<div class="team-card">
+    <div class="image-wrapper">
+        <img src="yishu.png" alt="Yishu Goel" class="team-img">
+    </div>
+    <h5>Yishu Goel</h5>
+   
+    <p class="text-yellow">Litigation Expert</p>
+    </div>
+
+<div class="team-card">
+    <div class="image-wrapper">
+        <img src="nitin.png" alt="Nitin Goyal" class="team-img">
+    </div>
+    <h5>Nitin Goyal</h5>
+    
+    <p class="text-yellow">Corporate Tax Specialist</p>
+    </div>
+</div>
+    </section>
+
+     <section class="contact-footer">
+        <span class="text-warning text-uppercase fw-bold letter-spacing-2">Secure Your Future</span>
+        <h2 class="mt-3">Ready for a Professional Consultation?</h2>
+        <a href="mailto:md@hexatp.com" class="btn-main px-5 py-3 fs-5 mt-4">md@hexatp.com</a>
+        <p class="mt-4 text-secondary">Contact our Managing Director for a confidential consultation on your Transfer Pricing needs.</p>
+    </section>
+ <footer>
+        © 2026 HexaTP – Transfer Pricing Intelligence Platform
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
